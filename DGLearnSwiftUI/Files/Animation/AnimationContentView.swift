@@ -48,21 +48,22 @@ struct AnimationContentView: View {
     }
     
     var body: some View {
-        GeometryReader(content: { proxy in
-            VStack {
-                Text("点击矩形框可以执行动画")
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
-                    .padding(16)
-                
+        VStack {
+            Text("点击矩形框可以执行动画")
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+                .padding(16)
+        
+            GeometryReader(content: { proxy in
                 if self.showFlag {
                     /// 这里的 alignment，控制子视图之间的纵向对齐方式（找出高度最高的子视图，让该子视图在纵向上与 HStack 中间对齐，然后让其他子视图与该视图以 alignment 进行对齐，因此，子视图极有可能不会贴着 HStack 的边框）
                     HStack(alignment: self.alignmentFlag ? .bottom : .top, spacing: self.calculateSpacing(proxy)) {
                         ForEach(0..<self.values.count, id: \.self) { idx in
+                            /// 先设置 transition，后设置 animation，否则在低版本上出现的效果会不符合预期
                             Capsule()
                                 .fill(self.alignmentFlag ? Color.accentColor : .pink)
                                 .frame(height: self.values[idx])
-                                .transition(.slide)
+                                .transition(AnyTransition.slide)
                                 .animation(.dg_ripple(at: idx))
                         }
                     }
@@ -71,22 +72,24 @@ struct AnimationContentView: View {
                         .padding([.leading, .trailing], self.calculateSpacing(proxy))
                         .border(Color.green, width: 3.0)
                         .contentShape(Rectangle())
-                        .transition(.dg_rightInLeftOut)
+                        .transition(AnyTransition.slide.combined(with: AnyTransition.opacity))
                         .onTapGesture { self.update() }
                 }
-                
-                Spacer()
-                
-                Button("点击这里切换展示与隐藏") {
+            })
+            
+            Spacer()
+            
+            Button("点击这里切换展示与隐藏") {
+                withAnimation(.easeOut(duration: 0.5)) {
                     self.showFlag = !self.showFlag
                 }
-                .padding(5)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 5)
-                        .stroke(Color.gray, lineWidth: 1)
-                )
             }
-        }).navigationBarTitle(Text("动画"), displayMode: .inline)
+            .padding(5)
+            .overlay(
+                RoundedRectangle(cornerRadius: 5)
+                    .stroke(Color.gray, lineWidth: 1)
+            )
+        }.navigationBarTitle(Text("动画"), displayMode: .inline)
     }
 }
 
