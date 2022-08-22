@@ -20,7 +20,7 @@ struct DataFlow_StateObject_ObservedObject_Published_DetailView: View {
                 .frame(width: 200, height: 200, alignment: .center)
                 .onTapGesture {
                     /// 模型中的 isLiked 属性，已被 Published 包装，因此，界面会随之发生变化
-                    entity.isLiked.toggle()
+                    self.entity.isLiked.toggle()
                 }
             
             Text("点击上方的图像进行切换")

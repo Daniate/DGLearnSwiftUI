@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+#if swift(>=5.3)
+@available(iOS 14.0, *)
 struct DataFlow_StateObject_EnvironmentObject_Published_ParentView: View {
     
     /// 此处也可使用 @State
@@ -33,14 +35,12 @@ struct DataFlow_StateObject_EnvironmentObject_Published_ParentView: View {
             
             Spacer()
             
-            Button {
-                entity.isLiked.toggle()
-            } label: {
-                Text("点击这里进行状态切换(父视图的修改，影响子视图)")
+            Button("点击这里进行状态切换(父视图的修改，影响子视图)") {
+                self.entity.isLiked.toggle()
             }
             .padding(5)
-            .overlay(
-                RoundedRectangle(
+            .dg_overlay(
+                content: RoundedRectangle(
                     cornerRadius: 5
                 )
                 .stroke(
@@ -51,12 +51,15 @@ struct DataFlow_StateObject_EnvironmentObject_Published_ParentView: View {
             
             Spacer()
         }
-        .navigationTitle("状态与数据流")
+        .dg_navigationTitle("状态与数据流")
     }
 }
 
+@available(iOS 14.0, *)
 struct DataFlow_EnvironmentObject_Environment_MasterView_Previews: PreviewProvider {
     static var previews: some View {
         DataFlow_StateObject_EnvironmentObject_Published_ParentView()
     }
 }
+
+#endif

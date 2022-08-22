@@ -3,12 +3,12 @@
 //  DGLearnSwiftUI
 //
 //  Created by daniate on 2022/8/20.
+//  Copyright © 2022 daniate. All rights reserved.
 //
 
 import SwiftUI
 
 struct StaticListView: View {
-    
     var body: some View {
         /// 在一个容器中最多只能包含 10 个静态视图，这里使用 Group 对多个静态视图进行整合
         List {
@@ -37,8 +37,8 @@ struct StaticListView: View {
                 Text("Item 19").listRowInsets(EdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0))
             }
         }
-        .navigationTitle("静态列表")
-        .listStyle(.plain)
+        .navigationBarTitle(Text("静态列表"), displayMode: .large)
+        .listStyle(PlainListStyle())
     }
 }
 

@@ -31,7 +31,7 @@ struct CustomSelectionListView: View {
                 /// 如果要使用当前模型的某个属性，比如 xxProp，则指定为 \.xxProp
                 ForEach(entities, id: \.self) { entity in
                     HStack {
-                        if selections.contains(entity) {
+                        if self.selections.contains(entity) {
                             Text(entity.content)
                                 .foregroundColor(Color.pink)
                                 .font(.system(size: 24))
@@ -40,22 +40,22 @@ struct CustomSelectionListView: View {
                             Text(entity.content)
                         }
                         Spacer()
-                        if selections.contains(entity) {
+                        if self.selections.contains(entity) {
                             Image(systemName: "checkmark.circle")
                                 .foregroundColor(Color.pink)
                         }
                     }
                     .contentShape(Rectangle()) // 让 HStack 上的空白区域也可以点击
                     .onTapGesture {
-                        if selections.contains(entity) {
-                            selections.remove(entity)
+                        if self.selections.contains(entity) {
+                            self.selections.remove(entity)
                         } else {
-                            selections.insert(entity)
+                            self.selections.insert(entity)
                         }
                     }
                 }
             })
-            .navigationTitle("自定义选择样式")
+            .dg_navigationTitle("自定义选择样式")
             
             Text("已选择 \(selections.count) 个")
         }

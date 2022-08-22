@@ -13,9 +13,9 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
+        for i in 0..<10 {
             let newItem = UserEntity(context: viewContext)
-            newItem.id = UUID()
+            newItem.id = UUID().uuidString
             newItem.avatar = "15\(arc4random_uniform(5))"
             newItem.nickname = "yool{\(arc4random_uniform(50))}"
         }

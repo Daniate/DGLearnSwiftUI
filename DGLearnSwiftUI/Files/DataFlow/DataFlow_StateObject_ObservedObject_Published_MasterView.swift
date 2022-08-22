@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+#if swift(>=5.3)
+@available(iOS 14.0, *)
 struct DataFlow_StateObject_ObservedObject_Published_MasterView: View {
     @StateObject private var entity = DGItemEntity(isLiked: false)
     
@@ -35,20 +37,19 @@ struct DataFlow_StateObject_ObservedObject_Published_MasterView: View {
             
             Spacer()
             
-            NavigationLink {
-                DataFlow_StateObject_ObservedObject_Published_DetailView(entity: entity)
-            } label: {
-                Text("点击这里进入详情页，修改后返回看看")
-            }
+            NavigationLink("点击这里进入详情页，修改后返回看看", destination: DataFlow_StateObject_ObservedObject_Published_DetailView(entity: entity))
             
             Spacer()
         }
-        .navigationTitle("状态与数据流")
+        .dg_navigationTitle("状态与数据流")
     }
 }
 
+@available(iOS 14.0, *)
 struct DataFlow_StateObject_ObservedObject_Published_MasterView_Previews: PreviewProvider {
     static var previews: some View {
-        DataFlow_StateObject_ObservedObject_Published_MasterView()
+        return DataFlow_StateObject_ObservedObject_Published_MasterView()
     }
 }
+
+#endif

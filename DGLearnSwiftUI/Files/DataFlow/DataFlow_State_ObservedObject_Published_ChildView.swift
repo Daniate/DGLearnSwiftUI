@@ -1,13 +1,14 @@
 //
-//  DataFlow_StateObject_ObservedObject_Published_ChildView.swift
+//  DataFlow_State_ObservedObject_Published_ChildView.swift
 //  DGLearnSwiftUI
 //
 //  Created by daniate on 2022/8/20.
+//  Copyright © 2022 daniate. All rights reserved.
 //
 
 import SwiftUI
 
-struct DataFlow_StateObject_ObservedObject_Published_ChildView: View {
+struct DataFlow_State_ObservedObject_Published_ChildView: View {
     /// DGItemEntity 遵循了 ObservableObject 协议，因此可以用 ObservedObject 进行包装
     @ObservedObject var entity: DGItemEntity
     
@@ -19,13 +20,13 @@ struct DataFlow_StateObject_ObservedObject_Published_ChildView: View {
             .frame(width: 200, height: 200, alignment: .center)
             .onTapGesture {
                 /// 模型中的 isLiked 属性，已被 Published 包装，因此，界面会随之发生变化
-                entity.isLiked.toggle()
+                self.entity.isLiked.toggle()
             }
     }
 }
 
-struct StateDataFlowChildView_Previews: PreviewProvider {
+struct DataFlow_State_ObservedObject_Published_ChildView_Previews: PreviewProvider {
     static var previews: some View {
-        DataFlow_StateObject_ObservedObject_Published_ChildView(entity: DGItemEntity(isLiked: false))
+        DataFlow_State_ObservedObject_Published_ChildView(entity: DGItemEntity(isLiked: false))
     }
 }

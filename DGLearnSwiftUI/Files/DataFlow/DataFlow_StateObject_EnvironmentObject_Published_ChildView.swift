@@ -20,7 +20,7 @@ struct DataFlow_StateObject_EnvironmentObject_Published_ChildView: View {
             .frame(width: 200, height: 200, alignment: .center)
             .onTapGesture {
                 /// 模型中的 isLiked 属性，已被 Published 包装，因此，界面会随之发生变化
-                item.isLiked.toggle()
+                self.item.isLiked.toggle()
             }
     }
 }

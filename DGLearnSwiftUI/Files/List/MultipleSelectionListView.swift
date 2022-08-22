@@ -3,6 +3,7 @@
 //  DGLearnSwiftUI
 //
 //  Created by daniate on 2022/8/20.
+//  Copyright © 2022 daniate. All rights reserved.
 //
 
 import SwiftUI
@@ -21,7 +22,6 @@ struct MultipleSelectionListView: View {
     
     var body: some View {
         VStack {
-            Text("点击右上角按钮可切换模式")
             /// selection：
             /// 如果是单选，需要遵循 Hashable 协议；
             /// 如果是多选，则需要使用 Set，Set 内的元素，需要遵循 Hashable 协议
@@ -34,17 +34,19 @@ struct MultipleSelectionListView: View {
                     Text($0.content)
                 }
             })
-            .navigationTitle("多项选择")
-            .toolbar {
-                EditButton()
-            }
+            
+            Text("点击右上角按钮可切换模式")
+                .font(.subheadline)
+                .foregroundColor(.secondary)
             
             Text("已选择 \(selections.count) 个")
         }
+        .navigationBarTitle(Text("多项选择"), displayMode: .inline)
+        .navigationBarItems(trailing: EditButton())
     }
 }
 
-struct DynamicMultipleSelectionListView_Previews: PreviewProvider {
+struct MultipleSelectionListView_Previews: PreviewProvider {
     static var previews: some View {
         MultipleSelectionListView()
     }

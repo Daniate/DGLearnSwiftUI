@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+#if swift(>=5.5)
 @available(iOS 15.0, *)
 struct PullRefreshListView: View {
     private let NUM_PER_PAGE = 20
@@ -40,12 +41,13 @@ struct PullRefreshListView: View {
                     .foregroundColor(refreshCounter % 2 == 1 ? .red : .accentColor)
             })
         }
-        .navigationTitle("下拉刷新")
+        .dg_navigationTitle("下拉刷新")
         .refreshable {
             await handlePullRefreshRandom()
         }
     }
     
+    @available(iOS 15.0, *)
     func handlePullRefreshRandom() async {
         if arc4random_uniform(2) == 0 {
             entities = await handlePullRefresh0()
@@ -55,6 +57,7 @@ struct PullRefreshListView: View {
         refreshCounter += 1
     }
     
+    @available(iOS 15.0, *)
     func handlePullRefresh0() async -> [DGItemEntity] {
         // 休眠一下（模拟网络请求）
         usleep(USECONDS_SLEEP)
@@ -66,6 +69,7 @@ struct PullRefreshListView: View {
         return x
     }
     
+    @available(iOS 15.0, *)
     func handlePullRefresh1() async {
         // 休眠一下（模拟网络请求）
         usleep(USECONDS_SLEEP)
@@ -77,13 +81,11 @@ struct PullRefreshListView: View {
     }
 }
 
+@available(iOS 15.0, *)
 struct DynamicPullRefreshListView_Previews: PreviewProvider {
     static var previews: some View {
-        if #available(iOS 15.0, *) {
-            PullRefreshListView()
-        } else {
-            // Fallback on earlier versions
-            Text("iOS 15.0 及更高版本，才支持 refreshable")
-        }
+        PullRefreshListView()
     }
 }
+
+#endif
