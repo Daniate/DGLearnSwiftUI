@@ -18,7 +18,10 @@ struct ContentView: View {
         NavigationLink("数据流-State-EnvironmentObject-Published", destination: AnyView(DataFlow_State_EnvironmentObject_Published_ParentView())),
         NavigationLink("数据流-State-ObservedObject-Published", destination: AnyView(DataFlow_State_ObservedObject_Published_ParentView())),
         NavigationLink("数据流-ObservedObject-Published", destination: AnyView(DataFlow_ObservedObject_Published_MasterView())),
-        NavigationLink("动画", destination: AnyView(AnimationContentView())),
+        NavigationLink("动画-滑行-弹跳", destination: AnyView(AnimationContentView())),
+        NavigationLink("动画-开门-关门", destination: AnyView(AnimationOpeningDoorView())),
+        NavigationLink("动画-打个圆孔", destination: AnyView(AnimationDigCenterHoleView())),
+        NavigationLink("动画-随机打孔", destination: AnyView(AnimationDigRandomHolesView())),
         NavigationLink("CoreData", destination: AnyView(CoreDataContentView().environment(\.managedObjectContext, PersistenceController.shared.container.viewContext))),
     ]
     

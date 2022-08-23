@@ -25,7 +25,7 @@ struct AnimationContentView: View {
     }
     
     func update() {
-        alignmentFlag = !alignmentFlag
+        alignmentFlag.toggle()
         values = generateValus();
     }
     
@@ -81,7 +81,7 @@ struct AnimationContentView: View {
             
             Button("点击这里切换展示与隐藏") {
                 withAnimation(.easeOut(duration: 0.5)) {
-                    self.showFlag = !self.showFlag
+                    self.showFlag.toggle()
                 }
             }
             .padding(5)
