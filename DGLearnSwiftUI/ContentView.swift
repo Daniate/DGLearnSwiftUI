@@ -23,6 +23,7 @@ struct ContentView: View {
         NavigationLink("动画-打个圆孔", destination: AnyView(AnimationDigCenterHoleView())),
         NavigationLink("动画-随机打孔", destination: AnyView(AnimationDigRandomHolesView())),
         NavigationLink("CoreData", destination: AnyView(CoreDataContentView().environment(\.managedObjectContext, PersistenceController.shared.container.viewContext))),
+        NavigationLink("平滑曲线", destination: AnyView(SmoothCurve())),
     ]
     
     init() {

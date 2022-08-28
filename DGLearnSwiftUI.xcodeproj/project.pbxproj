@@ -40,6 +40,7 @@
 		14A5DFCC28B244BD00761B5F /* MultipleSelectionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A5DFAF28B244BD00761B5F /* MultipleSelectionListView.swift */; };
 		14A5DFCD28B244BD00761B5F /* CustomSelectionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A5DFB028B244BD00761B5F /* CustomSelectionListView.swift */; };
 		14A5DFCE28B244BD00761B5F /* DGItemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A5DFB228B244BD00761B5F /* DGItemEntity.swift */; };
+		14BCB90528BB2D8F00A4891D /* SmoothCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BCB90428BB2D8F00A4891D /* SmoothCurve.swift */; };
 		14EB25F128B20E70007B884A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB25F028B20E70007B884A /* AppDelegate.swift */; };
 		14EB25F328B20E70007B884A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB25F228B20E70007B884A /* SceneDelegate.swift */; };
 		14EB25F528B20E70007B884A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB25F428B20E70007B884A /* ContentView.swift */; };
@@ -89,6 +90,7 @@
 		14A5DFAF28B244BD00761B5F /* MultipleSelectionListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleSelectionListView.swift; sourceTree = "<group>"; };
 		14A5DFB028B244BD00761B5F /* CustomSelectionListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSelectionListView.swift; sourceTree = "<group>"; };
 		14A5DFB228B244BD00761B5F /* DGItemEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGItemEntity.swift; sourceTree = "<group>"; };
+		14BCB90428BB2D8F00A4891D /* SmoothCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmoothCurve.swift; sourceTree = "<group>"; };
 		14CF9FAE28B3546800FBD434 /* 兼容问题.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "兼容问题.md"; sourceTree = "<group>"; };
 		14EB25ED28B20E70007B884A /* DGLearnSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DGLearnSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14EB25F028B20E70007B884A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 		14A5DF8F28B244BD00761B5F /* Files */ = {
 			isa = PBXGroup;
 			children = (
+				14BCB90328BB2D7B00A4891D /* SmoothCurve */,
 				14A5DF9028B244BD00761B5F /* DataFlow */,
 				14A5DF9F28B244BD00761B5F /* Util */,
 				14A5DFA328B244BD00761B5F /* Animation */,
@@ -259,6 +262,14 @@
 				14A5DFB228B244BD00761B5F /* DGItemEntity.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		14BCB90328BB2D7B00A4891D /* SmoothCurve */ = {
+			isa = PBXGroup;
+			children = (
+				14BCB90428BB2D8F00A4891D /* SmoothCurve.swift */,
+			);
+			path = SmoothCurve;
 			sourceTree = "<group>";
 		};
 		14EB25E428B20E6F007B884A = {
@@ -472,6 +483,7 @@
 				14FA5B6A28B48332005F8D85 /* AnimationDigCenterHoleView.swift in Sources */,
 				14A5DFC228B244BD00761B5F /* Animation+DG.swift in Sources */,
 				14A5DFC828B244BD00761B5F /* SingleSelectionListView.swift in Sources */,
+				14BCB90528BB2D8F00A4891D /* SmoothCurve.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
