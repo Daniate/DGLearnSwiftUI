@@ -10,6 +10,8 @@ import SwiftUI
 
 struct SmoothCurve: View {
     
+    @State private var pointsCount: Double = 10;
+    
     let xSmoothFactor: CGFloat = 0.5
     let ySmoothFactor: CGFloat = 0.5
     
@@ -107,10 +109,11 @@ struct SmoothCurve: View {
     var body: some View {
         GeometryReader { proxy in
             VStack {
-                buildSmoothCurveView(proxy, pointsCount: 10)
+                buildSmoothCurveView(proxy, pointsCount: Int(pointsCount))
                     .border(Color.black, width: 1)
-                buildSmoothCurveView(proxy, pointsCount: 20)
-                    .border(Color.blue, width: 1)
+                Slider(value: $pointsCount, in: 10...50, label: {
+                    Text("点的个数");
+                }).padding([.leading, .trailing], 24)
             }
         }
     }
