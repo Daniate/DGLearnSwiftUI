@@ -9,7 +9,7 @@
 import SwiftUI
 
 /// 在 Shape 上随机挖洞
-struct HoleShape: Shape, Animatable {
+struct HoleShape: Shape {
     var radius: CGFloat
     
     let center: CGPoint

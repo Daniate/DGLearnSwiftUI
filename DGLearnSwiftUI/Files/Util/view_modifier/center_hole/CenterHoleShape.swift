@@ -9,7 +9,7 @@
 import SwiftUI
 
 /// 在 Shape 中心位置挖洞
-struct CenterHoleShape: Shape, Animatable {
+struct CenterHoleShape: Shape {
     var radius: CGFloat
     
     var animatableData: CGFloat {
