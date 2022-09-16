@@ -41,6 +41,7 @@
 		14A5DFCD28B244BD00761B5F /* CustomSelectionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A5DFB028B244BD00761B5F /* CustomSelectionListView.swift */; };
 		14A5DFCE28B244BD00761B5F /* DGItemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A5DFB228B244BD00761B5F /* DGItemEntity.swift */; };
 		14BCB90528BB2D8F00A4891D /* SmoothCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BCB90428BB2D8F00A4891D /* SmoothCurve.swift */; };
+		14CC2C0128C490F7009BA564 /* AnimatedShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC2C0028C490F7009BA564 /* AnimatedShape.swift */; };
 		14EB25F128B20E70007B884A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB25F028B20E70007B884A /* AppDelegate.swift */; };
 		14EB25F328B20E70007B884A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB25F228B20E70007B884A /* SceneDelegate.swift */; };
 		14EB25F528B20E70007B884A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB25F428B20E70007B884A /* ContentView.swift */; };
@@ -91,6 +92,7 @@
 		14A5DFB028B244BD00761B5F /* CustomSelectionListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSelectionListView.swift; sourceTree = "<group>"; };
 		14A5DFB228B244BD00761B5F /* DGItemEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGItemEntity.swift; sourceTree = "<group>"; };
 		14BCB90428BB2D8F00A4891D /* SmoothCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmoothCurve.swift; sourceTree = "<group>"; };
+		14CC2C0028C490F7009BA564 /* AnimatedShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedShape.swift; sourceTree = "<group>"; };
 		14CF9FAE28B3546800FBD434 /* 兼容问题.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "兼容问题.md"; sourceTree = "<group>"; };
 		14EB25ED28B20E70007B884A /* DGLearnSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DGLearnSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14EB25F028B20E70007B884A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 		14A5DFA328B244BD00761B5F /* Animation */ = {
 			isa = PBXGroup;
 			children = (
+				14CC2C0028C490F7009BA564 /* AnimatedShape.swift */,
 				14A5DFA428B244BD00761B5F /* AnimationContentView.swift */,
 				142CB3B528B3A3A800875CC6 /* AnimationOpeningDoorView.swift */,
 				14FA5B6928B48332005F8D85 /* AnimationDigCenterHoleView.swift */,
@@ -444,6 +447,7 @@
 				14A5DFB928B244BD00761B5F /* DataFlow_State_Binding_ChildView.swift in Sources */,
 				14FA5B7228B4C61F005F8D85 /* DiggingHoleEffect.swift in Sources */,
 				14EB25F328B20E70007B884A /* SceneDelegate.swift in Sources */,
+				14CC2C0128C490F7009BA564 /* AnimatedShape.swift in Sources */,
 				14A5DFC728B244BD00761B5F /* DGLearnSwiftUI.xcdatamodeld in Sources */,
 				14FA5B7028B4C602005F8D85 /* HoleShape.swift in Sources */,
 				142CB3BA28B4740200875CC6 /* OpeningDoorEffect.swift in Sources */,
